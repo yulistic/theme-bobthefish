@@ -12,9 +12,9 @@
 #
 # You can override some default options in your config.fish:
 #
-#     set -g theme_display_git no
-#     set -g theme_display_git_untracked no
-#     set -g theme_display_hg yes
+     set -g theme_display_git yes
+     set -g theme_display_git_untracked yes
+     set -g theme_display_hg yes
 #     set -g theme_display_virtualenv no
 #     set -g theme_display_ruby no
 #     set -g theme_display_user yes
@@ -59,7 +59,7 @@ set __bobthefish_med_blue   005faf
 set __bobthefish_lt_orange  f6b117
 set __bobthefish_dk_orange  3a2a03
 
-set __bobthefish_dk_grey    333
+set __bobthefish_dk_grey    4a4a4a
 set __bobthefish_med_grey   999
 set __bobthefish_lt_grey    ccc
 
@@ -272,7 +272,8 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   set -l project_pwd  (__bobthefish_project_pwd $argv[1])
   if [ "$project_pwd" ]
     if [ -w "$PWD" ]
-      __bobthefish_start_segment 333 999
+      #__bobthefish_start_segment 333 999
+      __bobthefish_start_segment 4a4a4a ccc
     else
       __bobthefish_start_segment $__bobthefish_med_red $__bobthefish_lt_red
     end
@@ -316,7 +317,8 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l project_pwd  (__bobthefish_project_pwd $argv[1])
   if [ "$project_pwd" ]
     if [ -w "$PWD" ]
-      __bobthefish_start_segment 333 999
+#__bobthefish_start_segment 333 999
+      __bobthefish_start_segment 4a4a4a ccc
     else
       __bobthefish_start_segment $__bobthefish_med_red $__bobthefish_lt_red
     end
